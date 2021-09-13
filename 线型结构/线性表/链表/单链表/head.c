@@ -99,7 +99,8 @@ void deleteNode(Link *p, int pos)
         return;
     }
 
-    if(pos==1){
+    if (pos == 1)
+    {
         Node *del = p;
         p = p->next;
         free(del);
@@ -121,11 +122,43 @@ void deleteNode(Link *p, int pos)
 
 int searchNode(Link *p, int elem)
 {
-    return 0;
+    if (p == NULL)
+    {
+        return -1;
+    }
+
+    int pos = 0;
+    Node *s = p;
+    while (s != NULL)
+    {
+        pos++;
+        if (s->data == elem)
+        {
+            return pos;
+        }
+        s = s->next;
+    }
+    return -1;
 }
 
 void updateNode(Link *p, int pos, int newElem)
 {
+    if (p == NULL)
+    {
+        return;
+    }
+
+    int i = 1;
+    Node *u = p;
+    for (i = 1; i < pos; ++i)
+    {
+        if(u->next==NULL){
+            return;
+        }
+        u = u->next;
+    }
+
+    u->data = newElem;
 }
 
 // //迭代反转链表
@@ -155,6 +188,17 @@ int main(void)
     {
         insertNode(&p, i, i + 1);
     }
+
+    int pos = 0;
+    pos = searchNode(p, 6);
+    printf("pos=%d\n", pos);
+
+
+    updateNode(p,5,50);
+    updateNode(p,1,10);
+    updateNode(p,2,20);
+    updateNode(p,3,30);
+    updateNode(p,4,40);
 
     readLink(p);
     freeLink(p);
