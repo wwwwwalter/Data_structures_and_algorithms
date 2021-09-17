@@ -1,12 +1,12 @@
+#include <stdio.h>
+#include <stdio.h>
+
 /***
  * 单循环链表：约瑟夫环
  * 人数：n
  * 报数：m
  * 从K人开始
  */
-
-#include <stdio.h>
-#include <stdlib.h>
 
 typedef struct Node
 {
