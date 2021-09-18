@@ -7,7 +7,6 @@
 
 void insert_sort(int *list, int size)
 {
-
     //从第二个元素（下标为1开始遍历）
     int i = 1;
     for (i = 1; i < size; ++i)
