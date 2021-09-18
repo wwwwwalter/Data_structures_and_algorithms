@@ -14,13 +14,17 @@ void bubble_sort(int table[], int size)
     {
         for (j = 0; j < size - 1 - i; ++j)
         {
+            printf("%d",j+1);
             if (table[j] > table[j + 1])
             {
+                printf(" swap");
                 bigger = table[j];
                 table[j] = table[j + 1];
                 table[j + 1] = bigger;
             }
+            printf("\n");
         }
+        printf("##############\n");
     }
 }
 
