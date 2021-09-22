@@ -11,6 +11,7 @@ void insert_sort(int *list, int size)
     int i = 1;
     for (i = 1; i < size; ++i)
     {
+        //记录新值和位置
         int insertElem = list[i];
         int position = i;
 
